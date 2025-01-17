@@ -21,7 +21,6 @@ jobs:
     - name: Build application
       env:
         VITE_API_URL: ${{ secrets.VITE_API_URL }} # Example environment variable
-        VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
       run: |
         yarn
         yarn build
@@ -35,7 +34,7 @@ jobs:
         
     - name: Sync build to S3
       run: |
-        aws s3 sync ./dist s3://haikahlang-frontend-sit --delete
+        aws s3 sync ./dist s3://buckethahaha --delete
 
     # # Optional: Invalidate CloudFront cache (if using CloudFront)
     # - name: Invalidate CloudFront cache
